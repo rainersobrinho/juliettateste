@@ -19,62 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* Header - Sticky com CTA */
-        header {
-            background: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-        }
-
-        .header-cta {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .stars {
-            color: #ffc107;
-            font-size: 1rem;
-        }
-
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -93,44 +37,6 @@
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        /* Announcement Bar */
-        .announcement-bar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 0.8rem 2rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-top: 70px;
-            animation: slideDown 0.5s ease;
-        }
-
-        .announcement-bar span {
-            background: rgba(255,255,255,0.2);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            margin-left: 0.5rem;
         }
 
         /* Hero Section - Mais direto e focado em benefício */
@@ -231,36 +137,6 @@
             font-size: 0.95rem;
             margin-top: 1rem;
             backdrop-filter: blur(10px);
-        }
-
-        /* Social Proof Strip */
-        .social-proof {
-            background: white;
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .social-proof-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .proof-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .proof-icon {
-            font-size: 1.8rem;
         }
 
         /* Video Section - Mais destacado */
@@ -1051,10 +927,6 @@
             .section-title {
                 font-size: 2rem;
             }
-
-            .header-cta .trust-badge {
-                display: none;
-            }
         }
 
         /* Floating CTA Button */
@@ -1073,30 +945,8 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI" class="logo-img">
-                Jullieta AI
-            </div>
-            <div class="header-cta">
-                <div class="trust-badge">
-                    <span class="stars">★★★★★</span>
-                    <span>4.9/5 (2.847 avaliações)</span>
-                </div>
-                <a href="#comecar" class="btn-primary">Começar Grátis</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        🔥 OFERTA LIMITADA: Primeiros 100 usuários ganham 3 meses GRÁTIS <span>Restam 23 vagas</span>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="padding-top: 100px;">
         <div class="hero-content">
             <h1>Pare de Perder Dinheiro.<br>Comece a <span class="highlight">Economizar</span> Hoje.</h1>
             <p class="subtitle">Controle total das suas finanças direto no WhatsApp. Simples como enviar uma mensagem. Poderoso como um CFO pessoal.</p>
@@ -1122,24 +972,6 @@
 
             <div class="guarantee-badge">
                 🛡️ Sem cartão de crédito • 7 dias grátis • Cancele quando quiser
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="social-proof-content">
-            <div class="proof-item">
-                <span class="proof-icon">✓</span>
-                <span><strong>100% Seguro</strong> • Criptografia bancária</span>
-            </div>
-            <div class="proof-item">
-                <span class="proof-icon">⚡</span>
-                <span><strong>Resposta em 2s</strong> • IA em tempo real</span>
-            </div>
-            <div class="proof-item">
-                <span class="proof-icon">🏆</span>
-                <span><strong>#1 em Satisfação</strong> • 4.9/5 estrelas</span>
             </div>
         </div>
     </section>
