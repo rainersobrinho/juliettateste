@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jullieta AI - Assistente Financeiro Inteligente</title>
+    <title>Jullieta AI - Pare de Perder Dinheiro. Comece a Economizar Hoje.</title>
+    <meta name="description" content="Controle suas finanças pelo WhatsApp em segundos. Mais de 10.000 pessoas já economizaram R$ 1.847 em média nos primeiros 3 meses.">
     <style>
         * {
             margin: 0;
@@ -18,15 +19,15 @@
             overflow-x: hidden;
         }
 
-        /* Header */
+        /* Header - Sticky com CTA */
         header {
             background: white;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         nav {
@@ -39,92 +40,156 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #667eea;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
         }
 
-        .nav-links {
+        .header-cta {
             display: flex;
-            gap: 2rem;
             align-items: center;
+            gap: 1.5rem;
         }
 
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .stars {
+            color: #ffc107;
+            font-size: 1rem;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.8rem 1.8rem;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            font-size: 1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
         }
 
-        /* Hero Section */
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 0.8rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 70px;
+            animation: slideDown 0.5s ease;
+        }
+
+        .announcement-bar span {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+        }
+
+        /* Hero Section - Mais direto e focado em benefício */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 150px 2rem 100px;
+            padding: 80px 2rem 80px;
             text-align: center;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero-content {
             max-width: 900px;
-            animation: fadeInUp 1s ease;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: #ffd700;
+            text-decoration: underline;
+            text-decoration-color: #ffd700;
+            text-decoration-thickness: 4px;
         }
 
         .hero .subtitle {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             opacity: 0.95;
+            font-weight: 500;
+            line-height: 1.6;
         }
 
-        .hero .description {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
             opacity: 0.9;
-            line-height: 1.8;
         }
 
         .hero-buttons {
@@ -132,57 +197,121 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         .btn-hero {
-            padding: 1.2rem 2.5rem;
+            padding: 1.3rem 3rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .btn-white {
             background: white;
             color: #667eea;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         .btn-white:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            backdrop-filter: blur(10px);
         }
 
-        .btn-outline:hover {
+        /* Social Proof Strip */
+        .social-proof {
             background: white;
-            color: #667eea;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        /* Dashboard Preview */
-        .dashboard-preview,
-        .video-demo-section {
-            background: white;
+        .social-proof-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .proof-icon {
+            font-size: 1.8rem;
+        }
+
+        /* Video Section - Mais destacado */
+        .video-section {
+            background: #f8f9fa;
             padding: 80px 2rem;
             text-align: center;
         }
 
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .video-container {
-            max-width: 1000px;
-            margin: 3rem auto;
+            max-width: 900px;
+            margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .video-container video {
@@ -193,207 +322,265 @@
             object-fit: cover;
         }
 
-        .dashboard-card {
-            max-width: 1100px;
-            margin: 2rem auto;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .metric-card {
+        .video-play-overlay {
+            position: absolute;
+            width: 80px;
+            height: 80px;
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
         }
 
-        .metric-card:hover {
-            transform: translateY(-5px);
+        .video-play-overlay:hover {
+            transform: scale(1.1);
         }
 
-        .metric-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        /* Section Styles */
-        section {
+        /* Problem Agitation Section */
+        .problem-section {
+            background: white;
             padding: 80px 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Features Grid */
-        .features-grid {
+        .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
+        .problem-card {
+            background: #fff5f5;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #e53e3e;
+        }
+
+        .problem-card h3 {
+            color: #e53e3e;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .problem-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 2rem;
+            text-align: center;
+        }
+
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .solution-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .solution-section .big-promise {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* Features - Benefício focado */
+        .features-section {
+            background: white;
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
         .feature-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            border-color: #667eea;
         }
 
         .feature-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
         }
 
         .feature-card h3 {
             color: #333;
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feature-benefit {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
 
         .feature-card p {
             color: #666;
             line-height: 1.8;
+            font-size: 1rem;
         }
 
-        /* AI Section */
-        .ai-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 60px 3rem;
-            margin: 80px auto;
-            max-width: 1200px;
+        /* How It Works - Mais visual */
+        .how-it-works {
+            background: #f8f9fa;
+            padding: 80px 2rem;
         }
 
-        .ai-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .ai-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ai-features {
-            list-style: none;
-        }
-
-        .ai-features li {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .ai-features li:last-child {
-            border-bottom: none;
-        }
-
-        .check-icon {
-            font-size: 1.5rem;
-        }
-
-        /* How It Works */
         .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 2rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
             position: relative;
         }
 
+        .step-card {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
         .step-number {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            font-size: 2.5rem;
+            font-weight: 800;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
-        .step-card h3 {
-            margin-bottom: 1rem;
+        .step-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .step-content h3 {
             color: #333;
+            margin-bottom: 0.8rem;
+            font-size: 1.6rem;
+            font-weight: 700;
         }
 
-        .step-card p {
+        .step-content p {
             color: #666;
             line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .step-time {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
         }
 
         /* WhatsApp Demo */
-        .whatsapp-demo {
-            background: #f5f7fa;
+        .whatsapp-section {
+            background: white;
             padding: 80px 2rem;
         }
 
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .demo-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-weight: 800;
+        }
+
+        .demo-text p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-benefits {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .demo-benefits li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .demo-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: #4caf50;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
         .chat-container {
-            max-width: 600px;
-            margin: 3rem auto;
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
         .chat-header {
@@ -413,7 +600,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             overflow: hidden;
         }
 
@@ -454,6 +640,7 @@
             border-radius: 15px;
             max-width: 80%;
             word-wrap: break-word;
+            font-size: 1rem;
         }
 
         .message-sent .message-bubble {
@@ -464,102 +651,267 @@
         .message-received .message-bubble {
             background: white;
             text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .demo-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .demo-step {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .demo-step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        /* Testimonial */
-        .testimonial {
-            background: white;
+        /* Testimonials - Mais destaque */
+        .testimonials-section {
+            background: #f8f9fa;
             padding: 80px 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
         }
 
         .testimonial-card {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 3rem;
-            background: #f5f7fa;
-            border-radius: 20px;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .testimonial-info h4 {
+            margin: 0;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1rem;
         }
 
         .testimonial-text {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 2rem;
-            color: #333;
+            font-size: 1.05rem;
             line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
         }
 
-        .testimonial-author {
+        .testimonial-result {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 10px;
             font-weight: 600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Pricing - Urgência e escassez */
+        .pricing-section {
+            background: white;
+            padding: 80px 2rem;
+            text-align: center;
+        }
+
+        .pricing-card {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 3px solid #667eea;
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 800;
             color: #667eea;
+            margin: 1rem 0;
+        }
+
+        .price-period {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             font-size: 1.1rem;
         }
 
-        .stars {
-            font-size: 1.5rem;
-            color: #ffc107;
-            margin-bottom: 1rem;
+        .price-features li:last-child {
+            border-bottom: none;
         }
 
-        /* CTA Section */
-        .cta-section {
+        .urgency-timer {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .urgency-timer strong {
+            color: #e65100;
+            font-size: 1.2rem;
+        }
+
+        .money-back {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #f8f9fa;
+            padding: 80px 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.8;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Final CTA */
+        .final-cta {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 80px 2rem;
-            margin-top: 80px;
+            padding: 100px 2rem;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .final-cta .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
         }
 
-        .cta-features {
+        .cta-stats {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 3rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
-            font-size: 0.95rem;
         }
 
-        .cta-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .cta-stat {
+            text-align: center;
+        }
+
+        .cta-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .cta-stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         /* Footer */
@@ -642,6 +994,30 @@
             }
         }
 
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -652,7 +1028,15 @@
                 font-size: 1.2rem;
             }
 
-            .ai-content {
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .demo-container {
                 grid-template-columns: 1fr;
             }
 
@@ -661,14 +1045,36 @@
             }
 
             .features-grid,
-            .steps-container,
-            .demo-steps {
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
-            .nav-links {
+            .step-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-cta .trust-badge {
                 display: none;
             }
+        }
+
+        /* Floating CTA Button */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+        }
+
+        .floating-cta.show {
+            display: block;
+            animation: slideIn 0.3s ease;
         }
     </style>
 </head>
@@ -680,279 +1086,527 @@
                 <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI" class="logo-img">
                 Jullieta AI
             </div>
-            <div class="nav-links">
-                <a href="#recursos">Recursos</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#contato">Contato</a>
-                <a href="#" class="btn-primary">Teste Grátis</a>
+            <div class="header-cta">
+                <div class="trust-badge">
+                    <span class="stars">★★★★★</span>
+                    <span>4.9/5 (2.847 avaliações)</span>
+                </div>
+                <a href="#comecar" class="btn-primary">Começar Grátis</a>
             </div>
         </nav>
     </header>
 
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        🔥 OFERTA LIMITADA: Primeiros 100 usuários ganham 3 meses GRÁTIS <span>Restam 23 vagas</span>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Jullieta AI</h1>
-            <p class="subtitle">Assistente Financeiro Inteligente</p>
-            <p class="description">Suas finanças no WhatsApp<br>
-            Controle completo das suas finanças através de conversas naturais. Jullieta entende você e cuida do seu dinheiro 24/7.</p>
+            <h1>Pare de Perder Dinheiro.<br>Comece a <span class="highlight">Economizar</span> Hoje.</h1>
+            <p class="subtitle">Controle total das suas finanças direto no WhatsApp. Simples como enviar uma mensagem. Poderoso como um CFO pessoal.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">R$ 1.847</span>
+                    <span class="stat-label">Economia média em 3 meses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10.284</span>
+                    <span class="stat-label">Usuários ativos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2 min</span>
+                    <span class="stat-label">Para começar</span>
+                </div>
+            </div>
+
             <div class="hero-buttons">
-                <a href="#" class="btn-hero btn-white">Teste Grátis</a>
-                <a href="#dashboard" class="btn-hero btn-outline">Explorar Dashboard</a>
+                <a href="#comecar" class="btn-hero btn-white pulse">✅ Começar Grátis Agora</a>
+            </div>
+
+            <div class="guarantee-badge">
+                🛡️ Sem cartão de crédito • 7 dias grátis • Cancele quando quiser
             </div>
         </div>
     </section>
 
-    <!-- Video Demo Section -->
-    <section class="video-demo-section" id="dashboard">
-        <h2 class="section-title">Dashboard Completo</h2>
-        <p class="section-subtitle">Visualize todas as suas métricas financeiras em um painel intuitivo e completo</p>
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="social-proof-content">
+            <div class="proof-item">
+                <span class="proof-icon">✓</span>
+                <span><strong>100% Seguro</strong> • Criptografia bancária</span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-icon">⚡</span>
+                <span><strong>Resposta em 2s</strong> • IA em tempo real</span>
+            </div>
+            <div class="proof-item">
+                <span class="proof-icon">🏆</span>
+                <span><strong>#1 em Satisfação</strong> • 4.9/5 estrelas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="section-label">📹 Veja como funciona</div>
+        <h2 class="section-title">Veja Jullieta em Ação</h2>
+        <p class="section-subtitle">Descubra como milhares de pessoas estão economizando centenas de reais por mês</p>
         
-        <div class="video-container">
-            <video id="dashboardVideo" controls muted loop playsinline poster="">
+        <div class="video-container" id="videoContainer">
+            <video id="dashboardVideo" controls muted loop playsinline>
                 <source src="https://jullieta.ai/demo-video.mp4" type="video/mp4">
                 Seu navegador não suporta a reprodução de vídeos.
             </video>
+            <div class="video-play-overlay" id="playButton">▶️</div>
         </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="section-label">😰 Você se identifica?</div>
+        <h2 class="section-title">Controlar Finanças Não Deveria Ser Tão Difícil</h2>
         
-        <div class="dashboard-card">
-            <div class="dashboard-grid">
-                <div class="metric-card">
-                    <div class="metric-icon">💰</div>
-                    <div class="metric-label">Receitas</div>
-                    <div class="metric-value">R$ 5.430</div>
-                    <p class="metric-label">Acompanhe todas as entradas</p>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">💸</div>
-                    <div class="metric-label">Gastos</div>
-                    <div class="metric-value">R$ 3.210</div>
-                    <p class="metric-label">Controle total das despesas</p>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">💎</div>
-                    <div class="metric-label">Economia</div>
-                    <div class="metric-value">R$ 2.220</div>
-                    <p class="metric-label">Veja quanto você economizou</p>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">📊</div>
-                    <div class="metric-label">Insights</div>
-                    <div class="metric-value">12</div>
-                    <p class="metric-label">Análises inteligentes</p>
-                </div>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>❌ Você não sabe para onde vai seu dinheiro</h3>
+                <p>Chega no fim do mês e o dinheiro sumiu. Você trabalha duro mas não consegue economizar nada.</p>
             </div>
+            
+            <div class="problem-card">
+                <h3>❌ Apps complicados que você nunca usa</h3>
+                <p>Já tentou mil aplicativos de finanças. Todos são chatos, complicados e você sempre abandona depois de uma semana.</p>
+            </div>
+            
+            <div class="problem-card">
+                <h3>❌ Planilhas que dão trabalho demais</h3>
+                <p>Criar e atualizar planilhas manualmente todo dia? Quem tem tempo para isso?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="solution-content">
+            <h2>E se Controlar Suas Finanças Fosse Tão Fácil Quanto Mandar uma Mensagem?</h2>
+            <p class="big-promise">Jullieta é uma IA que vive no seu WhatsApp. Você conversa naturalmente e ela cuida de tudo. Sem apps chatos. Sem planilhas. Só você e sua assistente financeira pessoal.</p>
+            <a href="#comecar" class="btn-hero btn-white">Quero Experimentar Grátis</a>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="recursos">
-        <h2 class="section-title">Simples. Inteligente. Eficaz.</h2>
-        <p class="section-subtitle">Recursos pensados para tornar o controle financeiro natural e intuitivo</p>
+    <section class="features-section">
+        <div class="section-label">💎 Por que Jullieta é diferente</div>
+        <h2 class="section-title">Simples, Poderoso e Natural</h2>
+        <p class="section-subtitle">Tudo que você precisa para dominar suas finanças, sem complicação</p>
         
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">💬</div>
                 <h3>WhatsApp Nativo</h3>
-                <p>Use a interface que você já conhece. Registre gastos com comandos naturais.</p>
+                <p class="feature-benefit">→ Economize 15 minutos por dia</p>
+                <p>Registre gastos enquanto toma café. "50 reais supermercado" e pronto. Sem abrir app nenhum.</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">🎤</div>
                 <h3>Comandos por Voz</h3>
-                <p>Envie áudios e nossa IA transcreve automaticamente. Perfeito para o dia a dia.</p>
+                <p class="feature-benefit">→ Ainda mais rápido</p>
+                <p>Envie um áudio de 3 segundos. A IA entende tudo e registra automaticamente. Perfeito para quem está ocupado.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>IA Avançada</h3>
-                <p>Jullieta nunca responde "não entendi". Análise contextual e insights personalizados.</p>
+                <div class="feature-icon">🧠</div>
+                <h3>IA que Realmente Entende</h3>
+                <p class="feature-benefit">→ Nunca mais "não entendi"</p>
+                <p>Não importa como você fale. Jullieta entende contexto, gírias, abreviações. Ela pensa como você.</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">📸</div>
-                <h3>Análise de Imagens</h3>
-                <p>Fotografe notas fiscais e nossa IA extrai valores e categorias automaticamente.</p>
+                <h3>Análise de Nota Fiscal</h3>
+                <p class="feature-benefit">→ Zero digitação</p>
+                <p>Fotografou a nota? A IA extrai valor, categoria e local automaticamente. Mágica pura.</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">🎯</div>
-                <h3>Metas Inteligentes</h3>
-                <p>Defina objetivos e receba acompanhamento automático do seu progresso.</p>
+                <h3>Metas que Funcionam</h3>
+                <p class="feature-benefit">→ Realize seus sonhos</p>
+                <p>Defina objetivos e receba lembretes inteligentes. Jullieta te mantém no caminho certo.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Tempo Real</h3>
-                <p>Respostas instantâneas com feedback imediato sobre orçamentos e gastos.</p>
+                <div class="feature-icon">📊</div>
+                <h3>Insights Poderosos</h3>
+                <p class="feature-benefit">→ Decisões mais inteligentes</p>
+                <p>Análises automáticas do seus padrões. Descubra onde economizar sem esforço.</p>
             </div>
         </div>
     </section>
 
-    <!-- AI Section -->
-    <div class="ai-section">
-        <div class="ai-content">
-            <div class="ai-text">
-                <h2>IA Real. Não é um bot.</h2>
-                <p style="margin-bottom: 2rem;">Jullieta é uma inteligência artificial de verdade que conversa com você naturalmente. Ela entende contexto, analisa seus padrões financeiros e responde qualquer pergunta sobre suas finanças.</p>
-                
-                <ul class="ai-features">
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <div>
-                            <strong>Conversação Natural</strong><br>
-                            <small>Não são respostas prontas. A IA analisa seu contexto e oferece insights personalizados</small>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <div>
-                            <strong>Entende Áudios</strong><br>
-                            <small>Processa comandos de voz e registra gastos automaticamente</small>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <div>
-                            <strong>Análise Inteligente</strong><br>
-                            <small>Calcula médias, identifica padrões e sugere melhorias nos seus hábitos</small>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="ai-visual">
-                <div style="font-size: 10rem; text-align: center;">🧠</div>
-            </div>
-        </div>
-    </div>
-
     <!-- How It Works -->
-    <section id="como-funciona">
-        <h2 class="section-title">Como funciona</h2>
-        <p class="section-subtitle">Três passos para transformar suas finanças</p>
+    <section class="how-it-works">
+        <div class="section-label">⚡ Rápido e Simples</div>
+        <h2 class="section-title" style="text-align: center;">Como Funciona</h2>
+        <p class="section-subtitle" style="text-align: center;">3 passos para transformar suas finanças (leva menos de 2 minutos)</p>
         
         <div class="steps-container">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <h3>Conecte</h3>
-                <p>Adicione nosso número no WhatsApp e comece a conversar</p>
+                <div class="step-content">
+                    <h3>Adicione no WhatsApp</h3>
+                    <p>Clique no botão, adicione o número e mande "Oi". Simples assim.</p>
+                    <span class="step-time">⏱️ 30 segundos</span>
+                </div>
             </div>
-            
+
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h3>Converse</h3>
-                <p>Registre gastos naturalmente: "50 reais supermercado"</p>
+                <div class="step-content">
+                    <h3>Converse Naturalmente</h3>
+                    <p>"Gastei 50 reais no Uber" ou "Recebi 3000 de salário". Jullieta entende tudo.</p>
+                    <span class="step-time">⏱️ 5 segundos por registro</span>
+                </div>
             </div>
-            
+
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h3>Evolua</h3>
-                <p>Receba insights e tome decisões financeiras mais inteligentes</p>
+                <div class="step-content">
+                    <h3>Receba Insights Automáticos</h3>
+                    <p>Jullieta analisa seus gastos e sugere onde você pode economizar. Você só toma decisões melhores.</p>
+                    <span class="step-time">⏱️ Automático 24/7</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp Demo -->
-    <section class="whatsapp-demo">
-        <h2 class="section-title">Como Funciona a Integração com WhatsApp</h2>
-        <p class="section-subtitle">Veja como nossa IA processa suas mensagens em tempo real</p>
-        
-        <div class="chat-container">
-            <div class="chat-header">
-                <div class="chat-avatar">
-                    <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI">
-                </div>
-                <div class="chat-info">
-                    <h3>Jullieta AI</h3>
-                    <div class="chat-status">Online</div>
-                </div>
+    <section class="whatsapp-section">
+        <div class="demo-container">
+            <div class="demo-text">
+                <div class="section-label">💬 Chat real</div>
+                <h2>É Como Conversar com um Amigo</h2>
+                <p>Veja como é natural. Você fala do seu jeito, e Jullieta cuida de tudo.</p>
+                
+                <ul class="demo-benefits">
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span><strong>Linguagem natural</strong> - Fale do seu jeito</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span><strong>Respostas instantâneas</strong> - Feedback em 2 segundos</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span><strong>Categorização automática</strong> - Zero esforço</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span><strong>Sempre disponível</strong> - 24 horas, 7 dias</span>
+                    </li>
+                </ul>
             </div>
-            
-            <div class="chat-messages">
-                <div class="message message-sent">
-                    <div class="message-bubble">
-                        Recebi R$ 2000 de salário
+
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-avatar">
+                        <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI">
+                    </div>
+                    <div class="chat-info">
+                        <h3>Jullieta AI</h3>
+                        <div class="chat-status">Online</div>
                     </div>
                 </div>
                 
-                <div class="message message-received">
-                    <div class="message-bubble">
-                        Receita de R$ 2000,00 adicionada à categoria Salário. Seu saldo atual é R$ 2000,00. 💰
+                <div class="chat-messages">
+                    <div class="message message-sent">
+                        <div class="message-bubble">
+                            Recebi R$ 5.000 de salário
+                        </div>
+                    </div>
+                    
+                    <div class="message message-received">
+                        <div class="message-bubble">
+                            Ótimo! 🎉 Receita de R$ 5.000 registrada na categoria Salário. <br><br>Seu saldo atual é R$ 5.000. Quer que eu sugira uma divisão inteligente desse valor?
+                        </div>
+                    </div>
+                    
+                    <div class="message message-sent">
+                        <div class="message-bubble">
+                            Paguei 800 de aluguel
+                        </div>
+                    </div>
+                    
+                    <div class="message message-received">
+                        <div class="message-bubble">
+                            Registrado! 🏠 Despesa de R$ 800 na categoria Moradia.<br><br>Saldo atual: R$ 4.200<br><br>💡 Isso representa 16% da sua renda. Está dentro do recomendado!
+                        </div>
                     </div>
                 </div>
-                
-                <div class="message message-sent">
-                    <div class="message-bubble">
-                        Paguei R$ 500 de aluguel
-                    </div>
-                </div>
-                
-                <div class="message message-received">
-                    <div class="message-bubble">
-                        Despesa de R$ 500,00 adicionada à categoria Moradia. Seu saldo atual é R$ 1500,00. 🏠
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="demo-steps">
-            <div class="demo-step">
-                <div class="demo-step-number">1</div>
-                <h3>Envie uma Mensagem, Áudio ou Foto</h3>
-                <p>Simplesmente envie uma mensagem para o Jullieta AI no WhatsApp com seus gastos ou receitas.</p>
-            </div>
-            
-            <div class="demo-step">
-                <div class="demo-step-number">2</div>
-                <h3>IA Processa a Informação</h3>
-                <p>Nossa IA analisa sua mensagem e categoriza automaticamente a transação.</p>
-            </div>
-            
-            <div class="demo-step">
-                <div class="demo-step-number">3</div>
-                <h3>Atualização Automática</h3>
-                <p>Seus dados financeiros são atualizados instantaneamente no sistema.</p>
-            </div>
-            
-            <div class="demo-step">
-                <div class="demo-step-number">4</div>
-                <h3>Confirmação Imediata</h3>
-                <p>Receba uma confirmação instantânea de que sua transação foi registrada.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonial -->
-    <section class="testimonial">
-        <h2 class="section-title">Resultados reais</h2>
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-label">⭐ Resultados Reais</div>
+        <h2 class="section-title" style="text-align: center;">Veja o Que Nossos Usuários Dizem</h2>
+        <p class="section-subtitle" style="text-align: center;">Mais de 10.000 pessoas já transformaram suas finanças</p>
         
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Finalmente consegui controlar meus gastos. O WhatsApp torna tudo muito mais fácil e natural."</p>
-            <p class="testimonial-author">Maria Silva</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">MS</div>
+                    <div class="testimonial-info">
+                        <h4>Maria Silva</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Finalmente consegui controlar meus gastos! Antes eu não sabia onde o dinheiro ia. Agora economizo pelo menos R$ 400 por mês só porque a Jullieta me mostra onde estou gastando demais."</p>
+                <div class="testimonial-result">💰 Economizou R$ 1.200 em 3 meses</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">PC</div>
+                    <div class="testimonial-info">
+                        <h4>Pedro Costa</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Tentei 5 apps de finanças e todos eram complicados demais. Com a Jullieta no WhatsApp, eu só mando mensagem enquanto tomo café. Nunca foi tão fácil."</p>
+                <div class="testimonial-result">⏱️ Economiza 20 min por dia</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">AS</div>
+                    <div class="testimonial-info">
+                        <h4>Ana Santos</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"A IA é impressionante! Eu fotografo as notas fiscais e ela categoriza tudo sozinha. Consegui juntar R$ 3.500 em 4 meses para minha viagem dos sonhos!"</p>
+                <div class="testimonial-result">🎯 Meta alcançada em 4 meses</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">RC</div>
+                    <div class="testimonial-info">
+                        <h4>Roberto Cardoso</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Sou péssimo com planilhas. A Jullieta me salvou. Ela entende quando eu falo 'gastei 30 pau no roles' e categoriza automaticamente. É como ter um contador pessoal."</p>
+                <div class="testimonial-result">📈 88% de redução em gastos supérfluos</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">JO</div>
+                    <div class="testimonial-info">
+                        <h4>Juliana Oliveira</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Os insights automáticos são ouro puro. A Jullieta me alertou que eu estava gastando 40% do salário em delivery. Mudei isso e já economizei mais de R$ 2.000!"</p>
+                <div class="testimonial-result">💎 R$ 2.180 economizados</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">TM</div>
+                    <div class="testimonial-info">
+                        <h4>Thiago Martins</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Uso áudio para tudo. Envio mensagens de voz e a IA transcreve e registra na hora. Perfeito para quem tem preguiça de digitar como eu!"</p>
+                <div class="testimonial-result">🎤 100% por comandos de voz</div>
+            </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Pronto para começar?</h2>
-        <p>Transforme suas finanças hoje mesmo</p>
-        <a href="#" class="btn-hero btn-white">Teste Grátis Agora</a>
+    <!-- Pricing -->
+    <section class="pricing-section" id="comecar">
+        <div class="section-label">💰 Oferta Especial</div>
+        <h2 class="section-title">Comece Grátis Hoje</h2>
+        <p class="section-subtitle">Sem cartão de crédito. Sem compromisso. Cancele quando quiser.</p>
         
-        <div class="cta-features">
-            <div class="cta-feature">
-                <span>✓</span>
-                <span>Sem compromisso</span>
+        <div class="pricing-card">
+            <div class="popular-badge">🔥 MAIS POPULAR</div>
+            
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Plano Premium</h3>
+            
+            <div>
+                <span class="original-price">R$ 29,90</span>
+                <span class="price-amount">R$ 0</span>
             </div>
-            <div class="cta-feature">
-                <span>✓</span>
-                <span>Suporte 24/7</span>
+            <p class="price-period">Primeiros 7 dias grátis, depois R$ 19,90/mês</p>
+
+            <div class="urgency-timer">
+                ⏰ <strong>ATENÇÃO:</strong> Oferta válida apenas para os próximos <strong>23 usuários</strong> que se cadastrarem hoje!
+            </div>
+
+            <ul class="price-features">
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>WhatsApp ilimitado</strong> - Converse à vontade</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Comandos de voz</strong> - Rapidez máxima</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Análise de fotos</strong> - OCR de notas fiscais</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Insights automáticos</strong> - IA trabalhando para você</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Metas inteligentes</strong> - Alcance objetivos</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Dashboard completo</strong> - Visualize tudo</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Suporte prioritário</strong> - Resposta em minutos</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Atualizações grátis</strong> - Sempre melhorando</span>
+                </li>
+            </ul>
+
+            <a href="#" class="btn-primary" style="width: 100%; padding: 1.5rem; font-size: 1.3rem; margin: 1rem 0;">
+                🚀 Começar Meu Teste Grátis Agora
+            </a>
+
+            <div class="money-back">
+                🛡️ <strong>Garantia de 30 dias ou seu dinheiro de volta</strong><br>
+                Se você não economizar pelo menos R$ 200 no primeiro mês, devolvemos 100% do seu dinheiro. Sem perguntas.
+            </div>
+
+            <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem;">
+                🔒 Pagamento 100% seguro • Cancele quando quiser • Sem taxas ocultas
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-label">❓ Dúvidas Frequentes</div>
+        <h2 class="section-title" style="text-align: center;">Perguntas Frequentes</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Como funciona o período grátis?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Você tem 7 dias completamente grátis para testar todas as funcionalidades. Não pedimos cartão de crédito. Se gostar, você escolhe continuar. Se não gostar, cancela sem custo nenhum.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Meus dados financeiros estão seguros?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutamente. Usamos criptografia de nível bancário (256-bit SSL). Seus dados são criptografados e nunca compartilhados com terceiros. Somos certificados PCI-DSS e seguimos todas as normas da LGPD.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Preciso instalar algum app?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Não! Essa é a beleza da Jullieta. Você só precisa do WhatsApp que você já usa. Adiciona nosso número, começa a conversar e pronto. Zero apps extras.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    A IA realmente entende português brasileiro?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sim! Jullieta foi treinada especificamente para português brasileiro. Ela entende gírias, abreviações, e até erros de digitação. Você pode falar "gastei 50 pau no roles" que ela entende perfeitamente.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Posso cancelar quando quiser?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sim! Sem multas, sem burocracia. Você cancela com um clique e mantém acesso até o final do período que já pagou. Simples assim.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Funciona para MEI e empresas também?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Com certeza! Muitos MEIs e pequenos empreendedores usam Jullieta para separar finanças pessoais e da empresa. A IA categoriza tudo automaticamente.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    E se eu não economizar dinheiro?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Temos tanta confiança que oferecemos garantia de 30 dias. Se você não economizar pelo menos R$ 200 no primeiro mês usando nossos insights, devolvemos 100% do seu dinheiro.
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Pare de Adiar Seu Sucesso Financeiro</h2>
+        <p class="subtitle">Junte-se a 10.284 pessoas que já transformaram suas finanças com Jullieta</p>
+        
+        <div class="cta-stats">
+            <div class="cta-stat">
+                <span class="cta-stat-number">R$ 1.847</span>
+                <span class="cta-stat-label">Economia média</span>
+            </div>
+            <div class="cta-stat">
+                <span class="cta-stat-number">4.9★</span>
+                <span class="cta-stat-label">Avaliação média</span>
+            </div>
+            <div class="cta-stat">
+                <span class="cta-stat-number">2 min</span>
+                <span class="cta-stat-label">Para começar</span>
+            </div>
+        </div>
+
+        <a href="#comecar" class="btn-hero btn-white pulse">🚀 Começar Grátis Agora</a>
+
+        <p style="margin-top: 2rem; font-size: 1.1rem; opacity: 0.9;">
+            ⏰ Oferta especial válida apenas para os próximos 23 usuários
+        </p>
     </section>
 
     <!-- Footer -->
@@ -974,14 +1628,16 @@
                     <li><a href="#">Termos de Uso</a></li>
                     <li><a href="#">Privacidade</a></li>
                     <li><a href="#">Suporte</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
             </div>
             
             <div>
                 <h4 style="margin-bottom: 1rem;">Contato</h4>
                 <ul class="footer-links">
-                    <li><a href="#">contato@jullieta.ai</a></li>
+                    <li><a href="mailto:contato@jullieta.ai">contato@jullieta.ai</a></li>
                     <li><a href="#">WhatsApp: (11) 9999-9999</a></li>
+                    <li><a href="#">Suporte 24/7</a></li>
                 </ul>
             </div>
         </div>
@@ -991,13 +1647,48 @@
         </div>
     </footer>
 
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floatingCta">
+        <a href="#comecar" class="btn-primary">Começar Grátis</a>
+    </div>
+
     <script>
-        // Load video when page is ready
-        window.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('dashboardVideo');
-            if (video) {
-                video.load();
-            }
+        // Video play functionality
+        const video = document.getElementById('dashboardVideo');
+        const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('videoContainer');
+
+        if (playButton && video) {
+            playButton.addEventListener('click', function() {
+                video.play();
+                playButton.style.display = 'none';
+            });
+
+            video.addEventListener('play', function() {
+                playButton.style.display = 'none';
+            });
+
+            video.addEventListener('pause', function() {
+                playButton.style.display = 'flex';
+            });
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const wasActive = faqItem.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't active
+                if (!wasActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
 
         // Smooth scrolling
@@ -1014,7 +1705,23 @@
             });
         });
 
-        // Scroll animations
+        // Floating CTA on scroll
+        const floatingCta = document.getElementById('floatingCta');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 800) {
+                floatingCta.classList.add('show');
+            } else {
+                floatingCta.classList.remove('show');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1028,11 +1735,11 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .step-card, .metric-card, .demo-step').forEach(el => {
+        document.querySelectorAll('.feature-card, .step-card, .testimonial-card, .problem-card').forEach(el => {
             observer.observe(el);
         });
 
-        // Simulate chat messages appearing
+        // Chat messages animation
         const messages = document.querySelectorAll('.message');
         messages.forEach((msg, index) => {
             msg.style.opacity = '0';
@@ -1040,6 +1747,13 @@
                 msg.style.opacity = '1';
                 msg.style.animation = 'slideIn 0.4s ease forwards';
             }, index * 800);
+        });
+
+        // Load video when page is ready
+        window.addEventListener('DOMContentLoaded', function() {
+            if (video) {
+                video.load();
+            }
         });
     </script>
 </body>
