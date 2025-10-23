@@ -167,13 +167,19 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            background: #000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .video-container video {
             width: 100%;
             height: auto;
             display: block;
+            min-height: 500px;
+            object-fit: cover;
         }
 
         .dashboard-card {
@@ -672,13 +678,9 @@
         <p class="section-subtitle">Visualize todas as suas métricas financeiras em um painel intuitivo e completo</p>
         
         <div class="video-container">
-            <video controls muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23667eea'/%3E%3Ctext x='500' y='300' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3EDashboard Demo%3C/text%3E%3C/svg%3E">
-                <source src="demo-video.mp4" type="video/mp4">
-                <div style="padding: 2rem; text-align: center; color: white; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    <h3>Dashboard Demo</h3>
-                    <p>Vídeo demonstrativo do dashboard será disponibilizado em breve</p>
-                    <div style="font-size: 3rem; margin: 1rem 0;">📊</div>
-                </div>
+            <video id="dashboardVideo" controls muted loop playsinline poster="">
+                <source src="https://jullieta.ai/demo-video.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeos.
             </video>
         </div>
         
@@ -949,11 +951,19 @@
         </div>
         
         <div class="footer-bottom">
-            <p>© 2025 Jullieta AI. Todos os direitos reservados.</p>
+            <p>© 2024 Jullieta AI. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script>
+        // Load video when page is ready
+        window.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('dashboardVideo');
+            if (video) {
+                video.load();
+            }
+        });
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -998,4 +1008,3 @@
     </script>
 </body>
 </html>
-
