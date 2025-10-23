@@ -45,6 +45,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
         }
 
         .nav-links {
@@ -403,6 +414,13 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            overflow: hidden;
+        }
+
+        .chat-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .chat-info h3 {
@@ -564,6 +582,16 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .footer-links {
@@ -648,7 +676,10 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Jullieta AI</div>
+            <div class="logo">
+                <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI" class="logo-img">
+                Jullieta AI
+            </div>
             <div class="nav-links">
                 <a href="#recursos">Recursos</a>
                 <a href="#como-funciona">Como Funciona</a>
@@ -832,7 +863,9 @@
         
         <div class="chat-container">
             <div class="chat-header">
-                <div class="chat-avatar">🤖</div>
+                <div class="chat-avatar">
+                    <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI">
+                </div>
                 <div class="chat-info">
                     <h3>Jullieta AI</h3>
                     <div class="chat-status">Online</div>
@@ -926,7 +959,10 @@
     <footer>
         <div class="footer-content">
             <div>
-                <div class="footer-logo">Jullieta AI</div>
+                <div class="footer-logo">
+                    <img src="https://jullieta.ai/jullieta-avatar.jpeg" alt="Jullieta AI">
+                    Jullieta AI
+                </div>
                 <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">
                     Assistente financeiro inteligente que transforma a maneira como você gerencia seu dinheiro.
                 </p>
