@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#667eea">
     <title>Jullieta AI - Pare de Perder Dinheiro. Comece a Economizar Hoje.</title>
     <meta name="description" content="Controle suas finanças pelo WhatsApp em segundos. Mais de 10.000 pessoas já economizaram R$ 1.847 em média nos primeiros 3 meses.">
     
@@ -36,6 +37,8 @@
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .btn-primary {
@@ -909,42 +912,318 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Hero ajustado */
+            .hero {
+                padding: 60px 1.5rem 60px;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
             }
 
             .hero .subtitle {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
 
             .hero-stats {
-                gap: 1.5rem;
+                gap: 1rem;
+                flex-direction: column;
             }
 
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
-            .demo-container {
-                grid-template-columns: 1fr;
+            .stat-label {
+                font-size: 0.85rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
+            .btn-hero {
+                padding: 1rem 2rem;
+                font-size: 1rem;
             }
 
-            .features-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+            .guarantee-badge {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
             }
 
-            .step-card {
-                grid-template-columns: 1fr;
-                text-align: center;
+            /* Sections */
+            section {
+                padding: 50px 1.5rem;
             }
 
             .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Video */
+            .video-container {
+                min-height: 250px;
+            }
+
+            .video-container video {
+                min-height: 250px;
+            }
+
+            /* Features */
+            .features-grid,
+            .testimonials-grid,
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card,
+            .testimonial-card,
+            .problem-card {
+                padding: 1.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .feature-benefit {
+                font-size: 1rem;
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+
+            /* Steps */
+            .step-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .step-number {
+                width: 70px;
+                height: 70px;
                 font-size: 2rem;
+                margin: 0 auto;
+            }
+
+            .step-content {
+                padding: 1.5rem;
+            }
+
+            .step-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .step-content p {
+                font-size: 1rem;
+            }
+
+            /* WhatsApp Demo */
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .demo-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .demo-text p {
+                font-size: 1rem;
+            }
+
+            .demo-benefits li {
+                font-size: 0.95rem;
+            }
+
+            .chat-messages {
+                min-height: 300px;
+                padding: 1.5rem;
+            }
+
+            .message-bubble {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            /* Testimonials */
+            .testimonial-text {
+                font-size: 0.95rem;
+            }
+
+            /* Pricing */
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .price-amount {
+                font-size: 3rem;
+            }
+
+            .price-period {
+                font-size: 1rem;
+            }
+
+            .urgency-timer {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .price-features li {
+                font-size: 0.95rem;
+                padding: 0.8rem 0;
+            }
+
+            /* Form inputs mobile */
+            .pricing-card input,
+            .pricing-card select,
+            .pricing-card textarea {
+                padding: 0.9rem !important;
+                font-size: 16px !important; /* Evita zoom no iOS */
+            }
+
+            .pricing-card button {
+                padding: 1.2rem !important;
+                font-size: 1.1rem !important;
+            }
+
+            .pricing-card small {
+                font-size: 0.8rem;
+            }
+
+            .pricing-card label {
+                font-size: 0.95rem;
+            }
+
+            /* Modal */
+            #confirmEmailModal input {
+                font-size: 1.2rem !important;
+                padding: 0.9rem !important;
+            }
+
+            /* FAQ */
+            .faq-question {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 1rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* CTA Final */
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cta-stats {
+                gap: 1.5rem;
+                flex-direction: column;
+            }
+
+            .cta-stat-number {
+                font-size: 2rem;
+            }
+
+            .cta-stat-label {
+                font-size: 0.9rem;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-links {
+                font-size: 0.9rem;
+            }
+
+            /* Floating CTA */
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .floating-cta .btn-primary {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            /* Solution Section */
+            .solution-section h2 {
+                font-size: 2rem;
+            }
+
+            .solution-section .big-promise {
+                font-size: 1.2rem;
+            }
+
+            /* Popular badge */
+            .popular-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1.5rem;
+            }
+
+            /* Money back */
+            .money-back {
+                font-size: 0.9rem;
+                padding: 1.2rem;
+            }
+
+            /* Demo steps */
+            .demo-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-step h3 {
+                font-size: 1.1rem;
+            }
+
+            .demo-step p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .btn-hero {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .price-amount {
+                font-size: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
             }
         }
 
