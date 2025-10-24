@@ -1743,6 +1743,18 @@
                     localStorage.setItem('jullieta_token', data.access_token);
                     localStorage.setItem('jullieta_user', JSON.stringify(data.user));
                     
+                    // Facebook Pixel - Track Subscribe (Email confirmado - usuário ativo)
+                    if (typeof fbq !== 'undefined') {
+                        const planType = data.user.subscription?.plan?.toLowerCase().includes('familiar') ? 'family' : 'individual';
+                        fbq('track', 'Subscribe', {
+                            content_name: planType === 'family' ? 'Plano Familiar' : 'Plano Individual',
+                            value: planType === 'family' ? 179.90 : 49.90,
+                            currency: 'BRL',
+                            predicted_ltv: planType === 'family' ? 2158.80 : 598.80,
+                            status: 'active'
+                        });
+                    }
+                    
                     // Show success and redirect
                     showSuccess('🎉 E-mail confirmado! Redirecionando para o app...');
                     
